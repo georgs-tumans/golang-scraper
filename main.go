@@ -7,7 +7,7 @@ import (
 
 func main() {
 	bondsClient := clients.NewBondsClient()
-	if err := bondsClient.GetBondsOffers(); err != nil {
+	if err := bondsClient.ProcessSavingBondsOffers(); err != nil {
 		fmt.Println("Failed to process bonds data")
 	}
 
