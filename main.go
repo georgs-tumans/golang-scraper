@@ -16,6 +16,7 @@ func main() {
 		log.Println("Failed to process bonds data")
 	}
 
+	log.Println("Scraper finished")
 }
 
 func setupLogger() *os.File {
