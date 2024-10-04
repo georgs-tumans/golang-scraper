@@ -3,7 +3,7 @@ package services
 import (
 	"encoding/json"
 	"errors"
-	"fmt"
+	"log"
 
 	"github.com/valyala/fasthttp"
 )
@@ -19,19 +19,19 @@ func doRequest(url string, requestMethod string, response interface{}) error {
 	req.Header.Set("Accept", "application/json")
 
 	if err := fasthttp.Do(req, resp); err != nil {
-		fmt.Println("[DoRequest] Error doing request", err)
+		log.Println("[DoRequest] Error doing request", err)
 
 		return err
 	}
 
 	if resp.StatusCode() != fasthttp.StatusOK {
-		fmt.Println("[DoRequest] Status code is not OK", resp.StatusCode())
+		log.Println("[DoRequest] Status code is not OK", resp.StatusCode())
 
 		return errors.New("status code is not OK")
 	}
 
 	if err := json.Unmarshal(resp.Body(), response); err != nil {
-		fmt.Println("[DoRequest] Error deserializing request response", err)
+		log.Println("[DoRequest] Error deserializing request response", err)
 
 		return err
 	}

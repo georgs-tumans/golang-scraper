@@ -1,7 +1,7 @@
 package services
 
 import (
-	"fmt"
+	"log"
 	"scraper/config"
 
 	"github.com/go-mail/mail"
@@ -36,7 +36,7 @@ func (c *EmailClient) SendEmail(subject, body string) error {
 
 	d := mail.NewDialer(c.SMTPHost, c.Port, c.Username, c.Password)
 	if err := d.DialAndSend(m); err != nil {
-		fmt.Println("[SendEmail] Error sending email", err)
+		log.Println("[SendEmail] Error sending email", err)
 
 		return err
 	}

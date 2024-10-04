@@ -17,3 +17,5 @@ To run locally, you can press `F5` if using VS Code to run via a launch profile 
 ## Use
 
 Intended to be run regularly with the help of automatization tools or something like a Windows Scheduler.
+
+You can use `go build` in the project root to create an .exe file (on Windows).
