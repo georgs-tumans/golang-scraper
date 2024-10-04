@@ -10,7 +10,7 @@ A command line application with a set of tools originally intended for being run
 
 ## Initial setup
 
-Before running, you must create and fill an `.env` file; use this [example](.env) to fill out the values.
+Before running, you must create and fill an `.env` file; use this [example](./.env) to fill out the values.
 
 To run locally, you can press `F5` if using VS Code to run via a launch profile or just use the CMD command `go run main.go` in the root of the project.
  
